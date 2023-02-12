@@ -3,6 +3,7 @@
   <p>We're excited to announce the opening of our new cookie business! Our cookies are baked with love and care using only the finest ingredients, and we can't wait to share them with you.</p>
   <p>Be the first to know when we open our doors by signing up below.</p>
   <form action="#" method="post">
+    <input type="hidden" name="_csrf_token" value="<%= Guardian.Plug.CSRFProtection.get_csrf_token(conn) %>">
     <input type="email" name="email" placeholder="Your email address">
     <input type="submit" value="Sign up">
   </form>
