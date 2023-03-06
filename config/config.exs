@@ -50,3 +50,13 @@ config :phoenix, :json_library, Jason
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
+
+# config/config.exs
+config :swoosh, :adapter, Swoosh.Adapters.SMTP
+
+config :swoosh, Swoosh.Adapters.SMTP,
+  relay: "smtp.gmail.com",
+  port: 587,
+  username: "***REMOVED***",
+  password: "***REMOVED***",
+  tls: :if_available
