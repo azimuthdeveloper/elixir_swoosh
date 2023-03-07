@@ -1,5 +1,5 @@
 defmodule Hello.UserEmail do
-  import Swoosh.Email
+  use Phoenix.Swoosh, view: Hello.UserSignupView
 
   def welcome(user) do
     new()
