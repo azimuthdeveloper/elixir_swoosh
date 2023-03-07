@@ -50,6 +50,9 @@ defmodule Hello.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:phoenix_swoosh, "~> 1.0"},
+      {:gen_smtp, "~> 1.1.1"},
+      {:hackney, "~> 1.18.0"},
+
     ]
   end
 
