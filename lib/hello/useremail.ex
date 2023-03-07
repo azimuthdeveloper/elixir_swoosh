@@ -1,12 +1,13 @@
 defmodule Hello.UserEmail do
-  use Phoenix.Swoosh, view: Hello.UserSignupView
+  use Phoenix.Swoosh,
+  template_root: "lib/hello_web/templates/emails",
+  template_path: "welcome"
 
   def welcome(user) do
     new()
     |> to({user.name, user.email})
-    |> from({"Dr B Banner", "hulk.smash@example.com"})
-    |> subject("Hello, Avengers!")
-    |> html_body("<h1>Hello #{user.name}</h1>")
-    |> text_body("Hello #{user.name}\n")
+    |> from({"The Cookie Shop", "hello@cookies.com"})
+    |> subject("#{user.name}, you've made the list")
+    |> render_body("welcome.html", %{name: user.name})
   end
 end
